@@ -1,25 +1,21 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import Routes from './routes/Routes';
+import Message from './components/Message/Message';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import { useQuery } from '@apollo/client';
+import { GETDATA } from './graphql/queries';
+import { contriesItemsVar } from './graphql';
+
+export default function App() {
+	const { loading, error, data } = useQuery( GETDATA);
+
+	if (loading) return <Message>Carregando...</Message>;
+  	if (error) return <Message>Falha :(</Message>;
+
+  	contriesItemsVar(data.Country);
+	return (
+		<>
+			<Routes />
+		</>
+	);
 }
-
-export default App;
