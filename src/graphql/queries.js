@@ -1,18 +1,18 @@
-import { gql } from '@apollo/client';
+import { gql } from "@apollo/client";
 
 export const GETDATA = gql`
   query {
     Country {
-       _id,
-      capital,
-      nameTranslations(filter: { languageCode_in: ["pt"]}) {
+      _id
+      capital
+      nameTranslations(filter: { languageCode_in: ["pt"] }) {
         value
-      },
+      }
       flag {
         svgFile
-      },
-      area,
-      population,
+      }
+      area
+      population
       topLevelDomains {
         name
       }
@@ -29,5 +29,16 @@ export const LIST = gql`
 export const DETAILS = gql`
   query {
     details
+  }
+`;
+export const DISTANCE = gql`
+  query {
+    Country {
+      name
+      distanceToOtherCountries(first: 5) {
+        distanceInKm
+        countryName
+      }
+    }
   }
 `;

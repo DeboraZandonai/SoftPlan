@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
+import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
 
 import {
   Container,
@@ -15,6 +16,7 @@ import Message from "../Message/Message";
 
 import { useLazyQuery } from "@apollo/client";
 import { DETAILS } from "../../graphql/queries";
+import { DISTANCE } from "../../graphql/queries";
 import Header from "../Header/Header";
 
 export default function Details({ match }) {
@@ -27,7 +29,7 @@ export default function Details({ match }) {
   }, [getList]);
 
   if (loading) return <Message>Carregando...</Message>;
-  if (error) return <Message>Falha :(</Message>;
+  if (error) return <Message>Falha</Message>;
   if (data === undefined) return <Message>Carregando...</Message>;
   if (data.details.length === 0) {
     return (
@@ -77,6 +79,24 @@ export default function Details({ match }) {
             Editar
           </LinkBack>
         </Button>
+
+        <div style={{ height: "180px" }}>
+          <MapContainer
+            center={[51.505, -0.09]}
+            zoom={13}
+            scrollWheelZoom={false}
+          >
+            <TileLayer
+              attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+              url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+            />
+            <Marker position={[51.505, -0.09]}>
+              <Popup>
+                <Country>{name}</Country>
+              </Popup>
+            </Marker>
+          </MapContainer>
+        </div>
       </Container>
     </>
   );
