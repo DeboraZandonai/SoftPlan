@@ -8,6 +8,14 @@
 
 Challenge: Create a list of cards to display countries showing a flag, name and capital.
 
+<ul>
+<li>Used the <a href="http://testefront.dev.softplan.com.br">API</a> to bring the data;</li>
+<li>Used Create React App (CRA);</li>
+<li>Used react-router for the routes;</li>
+<li>Used @testing-library/react for creating tests;</li>
+<li>Used apollo client's local management to replace redux;</li>
+</ul>
+
 <h2>
   💡 How to run the project?
 </h2>
