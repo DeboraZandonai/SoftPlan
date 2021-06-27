@@ -16,7 +16,7 @@ import Message from "../Message/Message";
 import { useLazyQuery } from "@apollo/client";
 import { DETAILS } from "../../graphql/queries";
 import Header from "../Header/Header";
-import Map from "../Map/Map";
+// import Map from "../Map/Map";
 
 export default function Details({ match }) {
   const [getList, { error, loading, data }] = useLazyQuery(DETAILS, {
@@ -73,7 +73,7 @@ export default function Details({ match }) {
             </tr>
           </tbody>
         </Table>
-        <Map />
+        {/* <Map /> */}
         <Button>
           <LinkBack href={`/softplan/editar/${match.params.id}`}>
             Editar
