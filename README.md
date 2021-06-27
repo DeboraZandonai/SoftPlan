@@ -2,7 +2,7 @@
 
 ![Badge](/github/logo.png)
 
-[ACCESS](http://softplancountry.herokuapp.com/softplan).
+[ACCESS](http://softplancountry.herokuapp.com/softplan)
 
 ## 💻 Project proposal
 
