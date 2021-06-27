@@ -1,10 +1,11 @@
 import React from "react";
-import { HeaderBack, HeadingText } from "./styles";
+import { HeaderBack, Logo } from "./styles";
+import logo from "../../images/logo.svg";
 
 export default function Header() {
   return (
     <HeaderBack>
-      <HeadingText>SoftPlan Country</HeadingText>
+      <Logo src={logo} />
     </HeaderBack>
   );
 }

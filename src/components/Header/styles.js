@@ -9,3 +9,8 @@ export const HeadingText = styles.h1`
 	color: white;
 	font-family: 'Nunito Sans', sans-serif;
 `;
+
+export const Logo = styles.img`
+width: 15%;
+height: auto;
+`;
