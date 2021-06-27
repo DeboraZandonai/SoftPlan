@@ -31,6 +31,7 @@ export const DETAILS = gql`
     details
   }
 `;
+
 export const DISTANCE = gql`
   query {
     Country {

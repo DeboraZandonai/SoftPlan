@@ -16,7 +16,7 @@ import Message from "../Message/Message";
 
 import { useLazyQuery } from "@apollo/client";
 import { DETAILS } from "../../graphql/queries";
-import { DISTANCE } from "../../graphql/queries";
+// import { DISTANCE } from "../../graphql/queries";
 import Header from "../Header/Header";
 
 export default function Details({ match }) {
