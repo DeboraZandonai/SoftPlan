@@ -4,6 +4,8 @@ export const Container = styled.article`
   padding: 20px;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px));
+  max-width: 280px;
+  margin: 15px;
   flex-wrap: wrap;
 
   @media (max-width: 767px) {
