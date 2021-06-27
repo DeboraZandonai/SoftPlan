@@ -10,6 +10,8 @@ export const Container = styled.article`
 
   @media (max-width: 767px) {
     flex: 100%;
+    max-width: 100%;
+    width: 100%;
   }
 
   a {
